@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+    cupdescapi:
+        build: .
+        command: python manage.py runserver 0.0.0.0:8000
+        container_name: server
+        volumes:
+            - .:/code
+        ports:
+            - "8000:8000"
+
+    db_postgres:
+        image: postgres
+        container_name: postgres_db
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_DB: postgres
+            POSTGRES_PASSWORD: postgres
+        volumes:
+            - db_data:/var/lib/postgresql/data/
+
+volumes:
+    db_data:

@@ -1,0 +1,13 @@
+Django
+psycopg2
+psycopg2-binary
+django-oauth-toolkit
+djangorestframework
+django-cors-headers
+django-rest-swagger
+django-filter
+rest_condition
+boto3
+uwsgi
+drf-yasg
+django-constance

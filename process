@@ -1,0 +1,23 @@
+1. grab a list of albums names for any given artist/genre
+    show the result on web or store in csv.
+
+2. Obtain top track from artist
+    - and see if any of those songs exist in my playlist
+
+
+# search ->
+
+# Resource ->
+
+
+
+Local Endpoint: -> Authentication Spotify Enpoint
+
+Search local endpoint -> Search Spotify Endpoint
+    The return is handled to get only the albums
+
+
+
+
+
+Create a local application doing integration with external api.

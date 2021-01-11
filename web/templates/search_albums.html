@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Search Albums{% endblock %}
+
+{% block content %}
+
+    {% if data %}
+
+        <ol class="rounded-list">
+            {% for item in data.items %}
+                <li><a href="">{{ item.name }}</a></li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <form action="/albums/" method="post">
+            {% csrf_token %}
+            <div class="search">
+              <input type="text" class="searchTerm" name="search_name" placeholder="Search Artist or Genre">
+              <input type="submit" class="searchButton" value=""><i class="fa fa-search"></i>
+              </input>
+            </div>
+        </form>
+
+    {%  endif %}
+
+{% endblock %}

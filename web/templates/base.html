@@ -1,0 +1,54 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+{% load i18n %}
+
+<body>
+
+    <div class="s-layout">
+<!-- Sidebar -->
+<div class="s-layout__sidebar">
+  <a class="s-sidebar__trigger" href="#0">
+     <i class="fa fa-bars"></i>
+  </a>
+
+  <nav class="s-sidebar__nav">
+    {% block sidebar %}
+     <ul>
+        <li>
+           <a class="s-sidebar__nav-link" href="/">
+              <i class="fa fa-home"></i><em>Home</em>
+           </a>
+        </li>
+        <li>
+           <a class="s-sidebar__nav-link" href="/albums/">
+             <i class="fa fa-user"></i><em>Search Albums</em>
+           </a>
+        </li>
+        <li>
+           <a class="s-sidebar__nav-link" href="/toptracks/">
+              <i class="fa fa-camera"></i><em>Search Top Tracks</em>
+           </a>
+        </li>
+     </ul>
+    {% endblock %}
+  </nav>
+</div>
+
+<!-- Content -->
+<main class="s-layout__content">
+     {% block content %}{% endblock %}
+</main>
+</div>
+
+</body>
+</html>

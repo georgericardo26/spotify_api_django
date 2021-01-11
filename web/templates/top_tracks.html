@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Search Albums{% endblock %}
+
+
+{% block content %}
+
+    {% if top_tracks %}
+        <div class="row">
+            <div class="col-md-6">
+            <h2>Top Tracks of {{ artist_name }}</h2>
+                <ol class="rounded-list">
+                    {% for track in top_tracks %}
+
+                        {% if track.name in my_tracks %}
+                            <li><a href="">{{ track.name }}</a>
+                                <ol>
+			                        <li><a href="">It is in your playlist</a></li>
+                                </ol>
+                            </li>
+                        {% else %}
+                            <li><a href="">{{ track.name }}</a></li>
+                        {%  endif %}
+
+                    {% endfor %}
+                </ol>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Your Playlist Tracks</h2>
+                <ol class="rounded-list">
+                    {% for track_name in my_tracks %}
+                        <li><a href="">{{ track_name }}</a></li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+        </div>
+
+    {% else %}
+
+        <div class="row">
+        <form action="/toptracks/" method="post">
+            {% csrf_token %}
+            <div class="col-md-6">
+                    <div class="search">
+                      <input type="text" class="searchTerm" name="artist_name" placeholder="Search Artist" style="width: 600px; border-right: 3px solid #00B4CC; border-radius: 5px;">
+                    </div>
+            </div>
+
+            <div class="col-md-6">
+                <select name="market" style="border: 3px solid #00B4CC; width: 120px; height: 37px; border-radius: 8px;">
+                    <option selected disabled>Choose an Market</option>
+                    <option value="US">US</option>
+                    <option value="BR">BR</option>
+                    <option value="PT">PT</option>
+                    <option value="AU">AU</option>
+                </select>
+            </div>
+
+            <input type="submit" class="searchButton" value="Send" style="width: 75px; margin-left: 20px; border-radius: 5px; margin-top: 10px;">
+          </form>
+      </div>
+
+    {%  endif %}
+
+{% endblock %}
