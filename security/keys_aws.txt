@@ -1,2 +1,7 @@
 access_key=AKIARQ3UGJV7AXRLGMPB
 secret_key=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
+
+# databaseapi
+# postgres
+# spotify_base_2021
+# 5432
