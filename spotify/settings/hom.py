@@ -3,15 +3,15 @@ import os
 from .base import *
 
 
-DEBUG = False
+DEBUG = True
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('db_name'),
-        'USER': os.getenv('db_user'),
-        'PASSWORD': os.getenv('db_password'),
-        'HOST': os.getenv('db_host'),
+        'NAME': "postgres",
+        'USER': "postgres",
+        'PASSWORD': 'spotify_base_2021',
+        'HOST': 'databaseapi.cafan7lnuthi.us-west-2.rds.amazonaws.com',
         'PORT': 5432
     }
 }

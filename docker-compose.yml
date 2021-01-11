@@ -1,9 +1,11 @@
 version: '3'
 
 services:
-    cupdescapi:
+    backend_api:
         build: .
-        command: python manage.py runserver 0.0.0.0:8000
+#        command: python manage.py runserver 0.0.0.0:8000
+        command: ["python", "manage.py", "runserver", "0.0.0.0:8000",
+                            "--settings=spotify.settings.hom" ]
         container_name: server
         volumes:
             - .:/code
