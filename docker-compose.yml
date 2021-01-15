@@ -3,9 +3,11 @@ version: '3'
 services:
     backend_api:
         build: .
-#        command: python manage.py runserver 0.0.0.0:8000
-        command: ["python", "manage.py", "runserver", "0.0.0.0:8000",
-                            "--settings=spotify.settings.hom" ]
+        command: python manage.py runserver 0.0.0.0:8000
+        # Todo: I'' not setting the custom settings file because I'' need change the cache approach to local memcache
+        # and today we have database table approach.
+#        command: ["python", "manage.py", "runserver", "0.0.0.0:8000",
+#                            "--settings=spotify.settings.hom" ]
         container_name: server
         volumes:
             - .:/code
